@@ -6,6 +6,7 @@ project "Application"
     targetdir(targetBuildPath .. "/%{prj.name}")
     debugdir(targetBuildPath .. "/%{prj.name")
     objdir(objBuildPath .. "/%{prj.name}")
+	
     files {
         "src/**.hpp",
         "src/**.cpp"
@@ -13,6 +14,10 @@ project "Application"
 
     includedirs {
         "../Library/include"
+    }
+	
+    libdirs {
+        "../Build/target/Library"
     }
 
     links {
