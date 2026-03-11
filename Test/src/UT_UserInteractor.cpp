@@ -2,18 +2,151 @@
 #include <gtest/gtest.h>
 #include <string>
 
-TEST(UserInteractorTest, ParseAdd)
+TEST(UserInteractorTest, ParseAddVariant1)
 {
 	IO::UserInteractor ui = IO::UserInteractor();
 
-	std::string userInputOp = "add";
-	std::string userInputNum1 = "1";
-	std::string userInputNum2 = "1";
+	const std::string userInputOp = "add";
+	const std::string userInputNum1 = "1";
+	const std::string userInputNum2 = "1";
 
-	auto expected = std::make_tuple(1.0, 1.0, Calculator::MathOp::Add);
 	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
 
-	ASSERT_DOUBLE_EQ(std::get<0>(actual), std::get<0>(expected));
-	ASSERT_DOUBLE_EQ(std::get<1>(actual), std::get<1>(expected));
-	ASSERT_EQ(std::get<2>(actual), std::get<2>(expected));
+	ASSERT_DOUBLE_EQ(std::get<0>(actual), 1.0);
+	ASSERT_DOUBLE_EQ(std::get<1>(actual), 1.0);
+	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Add);
+}
+
+TEST(UserInteractorTest, ParseAddVariant2)
+{
+	IO::UserInteractor ui = IO::UserInteractor();
+
+	const std::string userInputOp = "ADD";
+	const std::string userInputNum1 = "-1";
+	const std::string userInputNum2 = "6.9";
+
+	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
+
+	ASSERT_DOUBLE_EQ(std::get<0>(actual), -1.0);
+	ASSERT_DOUBLE_EQ(std::get<1>(actual), 6.9);
+	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Add);
+}
+
+TEST(UserInteractorTest, ParseSubVariant1)
+{
+	IO::UserInteractor ui = IO::UserInteractor();
+
+	const std::string userInputOp = "sub";
+	const std::string userInputNum1 = "5";
+	const std::string userInputNum2 = "3";
+
+	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
+
+	ASSERT_DOUBLE_EQ(std::get<0>(actual), 5.0);
+	ASSERT_DOUBLE_EQ(std::get<1>(actual), 3.0);
+	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Subtract);
+}
+
+TEST(UserInteractorTest, ParseSubVariant2)
+{
+	IO::UserInteractor ui = IO::UserInteractor();
+
+	const std::string userInputOp = "Subtract";
+	const std::string userInputNum1 = "0.2";
+	const std::string userInputNum2 = "3";
+
+	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
+
+	ASSERT_DOUBLE_EQ(std::get<0>(actual), 0.2);
+	ASSERT_DOUBLE_EQ(std::get<1>(actual), 3.0);
+	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Subtract);
+}
+
+TEST(UserInteractorTest, ParseMulVariant1)
+{
+	IO::UserInteractor ui = IO::UserInteractor();
+
+	const std::string userInputOp = "mul";
+	const std::string userInputNum1 = "5";
+	const std::string userInputNum2 = "3";
+
+	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
+
+	ASSERT_DOUBLE_EQ(std::get<0>(actual), 5.0);
+	ASSERT_DOUBLE_EQ(std::get<1>(actual), 3.0);
+	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Multiply);
+}
+
+TEST(UserInteractorTest, ParseMulVariant2)
+{
+	IO::UserInteractor ui = IO::UserInteractor();
+
+	const std::string userInputOp = "MULTIPLY";
+	const std::string userInputNum1 = "0.2";
+	const std::string userInputNum2 = "3";
+
+	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
+
+	ASSERT_DOUBLE_EQ(std::get<0>(actual), 0.2);
+	ASSERT_DOUBLE_EQ(std::get<1>(actual), 3.0);
+	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Multiply);
+}
+
+TEST(UserInteractorTest, ParseDivVariant1)
+{
+	IO::UserInteractor ui = IO::UserInteractor();
+	
+	const std::string userInputOp = "div";
+	const std::string userInputNum1 = "5";
+	const std::string userInputNum2 = "3";
+	
+	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
+
+	ASSERT_DOUBLE_EQ(std::get<0>(actual), 5.0);
+	ASSERT_DOUBLE_EQ(std::get<1>(actual), 3.0);
+	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Divide);
+}
+
+TEST(UserInteractorTest, ParseDivVariant2)
+{
+	IO::UserInteractor ui = IO::UserInteractor();
+	
+	const std::string userInputOp = "DIVIDE";
+	const std::string userInputNum1 = "0.2";
+	const std::string userInputNum2 = "3";
+	
+	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
+	
+	ASSERT_DOUBLE_EQ(std::get<0>(actual), 0.2);
+	ASSERT_DOUBLE_EQ(std::get<1>(actual), 3.0);
+	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Divide);
+}
+
+TEST(UserInteractorTest, ParsePow)
+{
+	IO::UserInteractor ui = IO::UserInteractor();
+	
+	const std::string userInputOp = "pow";
+	const std::string userInputNum1 = "5";
+	const std::string userInputNum2 = "3";
+	
+	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
+
+	ASSERT_DOUBLE_EQ(std::get<0>(actual), 5.0);
+	ASSERT_DOUBLE_EQ(std::get<1>(actual), 3.0);
+	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Exponentiate);
+}
+
+TEST(UserInteractorTest, ParseSqrt)
+{
+	IO::UserInteractor ui = IO::UserInteractor();
+	
+	const std::string userInputOp = "sqrt";
+	const std::string userInputNum1 = "5";
+	const std::string userInputNum2 = "0";
+	
+	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
+	ASSERT_DOUBLE_EQ(std::get<0>(actual), 5.0);
+	ASSERT_DOUBLE_EQ(std::get<1>(actual), 0.0);
+	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::SquareRoot);
 }

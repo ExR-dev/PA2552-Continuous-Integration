@@ -44,11 +44,6 @@ TEST(CalculatorTest, Sqrt)
 	ASSERT_DOUBLE_EQ(Calculator::Sqrt(9), 3);
 }
 
-TEST(CalculatorTest, WillFail)
-{
-	ASSERT_DOUBLE_EQ(1, 2);
-}
-
 TEST(UserInputTest, arithmetic)
 {
 
