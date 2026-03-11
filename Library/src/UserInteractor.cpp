@@ -31,15 +31,15 @@ namespace IO
         {
             ari = Calculator::MathOp::Divide;
         }
-        else if(pOp == "sqrt")
+        else if(pop == "sqrt")
         {
             ari = Calculator::MathOp::SquareRoot;
         }
-        else if(pOp == "pow" || pOp == "exp")
+        else if(pop == "pow" || pop == "exp")
         {
             ari = Calculator::MathOp::Exponentiate;
         }
-        else if (pOp == "skaboop")
+        else if (pop == "skaboop")
         {
             ari = Calculator::MathOp::Skaboop;
         }
