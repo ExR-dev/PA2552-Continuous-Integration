@@ -48,7 +48,7 @@ pipeline {
 
         stage('Run Tests'){
             steps {
-                sh './Build/target/Test/Test'
+                sh './Build/target/Test/Test --gtest_output=xml:reports/gtestresults.xml'
             }
         }
     }
@@ -56,6 +56,10 @@ pipeline {
     post {
         always {
             echo 'Build finished.'
+            xunit (
+                thresholds: [ skipped(failureThreshold: '0'), failed(failureThreshold: '0') ],
+                tools: [ GoogleTest(pattern: 'reports/*.xml') ]
+            )
         }
         success {
             echo 'Build succeeded!'
