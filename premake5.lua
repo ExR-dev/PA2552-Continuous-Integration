@@ -4,7 +4,7 @@ require "Premake/helper"
 workspace "Workspace"
 
     location("Generated")
-    cppdialect "C++2a"
+    cppdialect "C++20"
     warnings "Extra"
     --fatalwarnings "all"
     --externalwarnings "Off"
