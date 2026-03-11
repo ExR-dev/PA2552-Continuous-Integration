@@ -2,6 +2,16 @@
 
 namespace Calculator
 {
+	enum MathOp
+	{
+		Add,
+		Subtract,
+		Multiply,
+		Divide,
+		Exponentiate,
+		SquareRoot
+	};
+
 	[[nodiscard]] double Add(double a, double b) noexcept;
 	[[nodiscard]] double Sub(double a, double b) noexcept;
 	[[nodiscard]] double Mul(double a, double b) noexcept;
