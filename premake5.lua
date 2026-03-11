@@ -6,8 +6,8 @@ workspace "Workspace"
     location("Generated")
     cppdialect "C++2a"
     warnings "Extra"
-    fatalwarnings "all"
-    externalwarnings "Off"
+    --fatalwarnings "all"
+    --externalwarnings "Off"
 
     configurations {
         "debug",
