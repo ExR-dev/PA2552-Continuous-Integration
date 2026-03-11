@@ -1,4 +1,3 @@
-#include <Utils.hpp>
 #include <Calculator.hpp>
 #include <gtest/gtest.h>
 
