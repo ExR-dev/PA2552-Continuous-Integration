@@ -4,12 +4,12 @@ namespace Calculator
 {
 	enum MathOp
 	{
-		Add,
-		Subtract,
-		Multiply,
-		Divide,
-		Exponentiate,
-		SquareRoot
+		OpAdd,
+		OpSubtract,
+		OpMultiply,
+		OpDivide,
+		OpExponentiate,
+		OpSquareRoot
 	};
 
 	[[nodiscard]] double Add(double a, double b) noexcept;
