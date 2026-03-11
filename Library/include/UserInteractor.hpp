@@ -18,6 +18,6 @@ namespace IO
         UserInteractor& operator=(UserInteractor&&) noexcept = default;
 
         [[nodiscard]] std::tuple<double, double, Calculator::MathOp> StringToMathOperation(std::string_view pNumOne, std::string_view pNumTwo, std::string_view pOp);
-        [[nodiscard]] double MakeCalculation();
+        [[nodiscard]] double MakeCalculation(std::tuple<double, double, Calculator::MathOp> &op);
     };
 } // IO
