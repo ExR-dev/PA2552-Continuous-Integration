@@ -1,4 +1,4 @@
-#include "../include/Calculator.hpp"
+#include "Calculator.hpp"
 #include <cmath>
 
 double Calculator::Add(double a, double b) noexcept

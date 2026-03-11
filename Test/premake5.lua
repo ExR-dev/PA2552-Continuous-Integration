@@ -1,7 +1,7 @@
 project "Test"
 
     kind "ConsoleApp"
-    location(rootPath .. "/Generated") -- projectPath
+    location(projectPath)
 
     targetdir(targetBuildPath .. "/%{prj.name}")
     objdir(objBuildPath .. "/%{prj.name}")
@@ -13,7 +13,6 @@ project "Test"
 
     includedirs {
         "../Library/include",
-        "../Application/include",
         targetBuildPath .. "/External/include"
     }
 
