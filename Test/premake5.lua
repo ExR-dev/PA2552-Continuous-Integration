@@ -7,7 +7,7 @@ project "Test"
     objdir(objBuildPath .. "/%{prj.name}")
 
     files {
-        "src/**.hpp",
+        "include/**.hpp",
         "src/**.cpp"
     }
 
