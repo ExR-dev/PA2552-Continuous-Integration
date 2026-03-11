@@ -4,6 +4,8 @@
 #include <string_view>
 #include <string>
 #include <cstring>
+#include <cctype>
+#include <algorithm>
 #include "Calculator.hpp"
 
 namespace IO
