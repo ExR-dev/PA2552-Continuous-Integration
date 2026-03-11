@@ -53,7 +53,7 @@ TEST(InputCalculationTest, CalcParsedPow)
 TEST(InputCalculationTest, CalcParsedSqrt)
 {
 	IO::UserInteractor ui = IO::UserInteractor();
-	auto parsedOp = ui.StringToMathOperation("9", "", "sqrt");
+	auto parsedOp = ui.StringToMathOperation("9", "0", "sqrt");
 	double result = ui.MakeCalculation(parsedOp);
 	ASSERT_NEAR(result, 3.0, 1e-6);
 }
