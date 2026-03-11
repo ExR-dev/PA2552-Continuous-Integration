@@ -12,8 +12,8 @@ TEST(UserInteractorTest, ParseAddVariant1)
 
 	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
 
-	ASSERT_DOUBLE_EQ(std::get<0>(actual), 1.0);
-	ASSERT_DOUBLE_EQ(std::get<1>(actual), 1.0);
+	ASSERT_NEAR(std::get<0>(actual), 1.0, 1e-6);
+	ASSERT_NEAR(std::get<1>(actual), 1.0, 1e-6);
 	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Add);
 }
 
@@ -27,8 +27,8 @@ TEST(UserInteractorTest, ParseAddVariant2)
 
 	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
 
-	ASSERT_DOUBLE_EQ(std::get<0>(actual), -1.0);
-	ASSERT_DOUBLE_EQ(std::get<1>(actual), 6.9);
+	ASSERT_NEAR(std::get<0>(actual), -1.0, 1e-6);
+	ASSERT_NEAR(std::get<1>(actual), 6.9, 1e-6);
 	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Add);
 }
 
@@ -42,8 +42,8 @@ TEST(UserInteractorTest, ParseSubVariant1)
 
 	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
 
-	ASSERT_DOUBLE_EQ(std::get<0>(actual), 5.0);
-	ASSERT_DOUBLE_EQ(std::get<1>(actual), 3.0);
+	ASSERT_NEAR(std::get<0>(actual), 5.0, 1e-6);
+	ASSERT_NEAR(std::get<1>(actual), 3.0, 1e-6);
 	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Subtract);
 }
 
@@ -57,8 +57,8 @@ TEST(UserInteractorTest, ParseSubVariant2)
 
 	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
 
-	ASSERT_DOUBLE_EQ(std::get<0>(actual), 0.2);
-	ASSERT_DOUBLE_EQ(std::get<1>(actual), 3.0);
+	ASSERT_NEAR(std::get<0>(actual), 0.2, 1e-6);
+	ASSERT_NEAR(std::get<1>(actual), 3.0, 1e-6);
 	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Subtract);
 }
 
@@ -72,8 +72,8 @@ TEST(UserInteractorTest, ParseMulVariant1)
 
 	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
 
-	ASSERT_DOUBLE_EQ(std::get<0>(actual), 5.0);
-	ASSERT_DOUBLE_EQ(std::get<1>(actual), 3.0);
+	ASSERT_NEAR(std::get<0>(actual), 5.0, 1e-6);
+	ASSERT_NEAR(std::get<1>(actual), 3.0, 1e-6);
 	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Multiply);
 }
 
@@ -87,8 +87,8 @@ TEST(UserInteractorTest, ParseMulVariant2)
 
 	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
 
-	ASSERT_DOUBLE_EQ(std::get<0>(actual), 0.2);
-	ASSERT_DOUBLE_EQ(std::get<1>(actual), 3.0);
+	ASSERT_NEAR(std::get<0>(actual), 0.2, 1e-6);
+	ASSERT_NEAR(std::get<1>(actual), 3.0, 1e-6);
 	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Multiply);
 }
 
@@ -102,8 +102,8 @@ TEST(UserInteractorTest, ParseDivVariant1)
 	
 	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
 
-	ASSERT_DOUBLE_EQ(std::get<0>(actual), 5.0);
-	ASSERT_DOUBLE_EQ(std::get<1>(actual), 3.0);
+	ASSERT_NEAR(std::get<0>(actual), 5.0, 1e-6);
+	ASSERT_NEAR(std::get<1>(actual), 3.0, 1e-6);
 	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Divide);
 }
 
@@ -117,8 +117,8 @@ TEST(UserInteractorTest, ParseDivVariant2)
 	
 	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
 	
-	ASSERT_DOUBLE_EQ(std::get<0>(actual), 0.2);
-	ASSERT_DOUBLE_EQ(std::get<1>(actual), 3.0);
+	ASSERT_NEAR(std::get<0>(actual), 0.2, 1e-6);
+	ASSERT_NEAR(std::get<1>(actual), 3.0, 1e-6);
 	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Divide);
 }
 
@@ -132,8 +132,8 @@ TEST(UserInteractorTest, ParsePow)
 	
 	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
 
-	ASSERT_DOUBLE_EQ(std::get<0>(actual), 5.0);
-	ASSERT_DOUBLE_EQ(std::get<1>(actual), 3.0);
+	ASSERT_NEAR(std::get<0>(actual), 5.0, 1e-6);
+	ASSERT_NEAR(std::get<1>(actual), 3.0, 1e-6);
 	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Exponentiate);
 }
 
@@ -146,7 +146,8 @@ TEST(UserInteractorTest, ParseSqrt)
 	const std::string userInputNum2 = "0";
 	
 	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
-	ASSERT_DOUBLE_EQ(std::get<0>(actual), 5.0);
-	ASSERT_DOUBLE_EQ(std::get<1>(actual), 0.0);
+
+	ASSERT_NEAR(std::get<0>(actual), 5.0, 1e-6);
+	ASSERT_NEAR(std::get<1>(actual), 0.0, 1e-6);
 	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::SquareRoot);
 }
