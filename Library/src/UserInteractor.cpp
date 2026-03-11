@@ -10,27 +10,27 @@ namespace IO
         Calculator::MathOp ari;
         if(pOp == "add")
         {
-            ari = Calculator::MathOp::OpAdd;
+            ari = Calculator::MathOp::Add;
         }
         else if(pOp == "sub")
         {
-            ari = Calculator::MathOp::OpSubtract;
+            ari = Calculator::MathOp::Subtract;
         }
         else if(pOp == "mul")
         {
-            ari = Calculator::MathOp::OpMultiply;
+            ari = Calculator::MathOp::Multiply;
         }
         else if(pOp == "div")
         {
-            ari = Calculator::MathOp::OpDivide;
+            ari = Calculator::MathOp::Divide;
         }
         else if(pOp == "sqrt")
         {
-            ari = Calculator::MathOp::OpSquareRoot;
+            ari = Calculator::MathOp::SquareRoot;
         }
         else if(pOp == "exp")
         {
-            ari = Calculator::MathOp::OpExponentiate;
+            ari = Calculator::MathOp::Exponentiate;
         }
         return std::tuple<double, double, Calculator::MathOp>(numOne, numTwo, ari);
     }
