@@ -58,7 +58,7 @@ pipeline {
             echo 'Build failed!'
         }
         cleanup {
-            sh "${PREMAKE} clean || true"
+            sh "${PREMAKE} clean -s"
         }
     }
 }
