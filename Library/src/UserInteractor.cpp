@@ -35,7 +35,7 @@ namespace IO
         {
             ari = Calculator::MathOp::SquareRoot;
         }
-        else if(pOp == "pow")
+        else if(pOp == "pow" || pOp == "exp")
         {
             ari = Calculator::MathOp::Exponentiate;
         }
