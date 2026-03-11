@@ -1,7 +1,7 @@
 project "Test"
 
     kind "ConsoleApp"
-    location(projectPath)
+    location(rootPath .. "/Generated") -- projectPath
 
     targetdir(targetBuildPath .. "/%{prj.name}")
     objdir(objBuildPath .. "/%{prj.name}")
