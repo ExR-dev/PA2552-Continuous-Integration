@@ -57,3 +57,19 @@ TEST(InputCalculationTest, CalcParsedSqrt)
 	double result = ui.MakeCalculation(parsedOp);
 	ASSERT_NEAR(result, 3.0, 1e-6);
 }
+
+TEST(InputCalculationTest, CalcParsedSkaboop1)
+{
+	IO::UserInteractor ui = IO::UserInteractor();
+	auto parsedOp = ui.StringToMathOperation("9", "0", "skaboop");
+	double result = ui.MakeCalculation(parsedOp);
+	ASSERT_NEAR(result, 0.0, 1e-6);
+}
+
+TEST(InputCalculationTest, CalcParsedSkaboop2)
+{
+	IO::UserInteractor ui = IO::UserInteractor();
+	auto parsedOp = ui.StringToMathOperation("69", "0", "skaboop");
+	double result = ui.MakeCalculation(parsedOp);
+	ASSERT_NEAR(result, 1.0, 1e-6);
+}

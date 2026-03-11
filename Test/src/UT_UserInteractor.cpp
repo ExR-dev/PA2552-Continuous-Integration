@@ -166,3 +166,17 @@ TEST(UserInteractorTest, ParseSqrt)
 	ASSERT_NEAR(std::get<1>(actual), 0.0, 1e-6);
 	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::SquareRoot);
 }
+
+TEST(UserInteractorTest, ParseSkaboop)
+{
+	IO::UserInteractor ui = IO::UserInteractor();
+
+	const std::string userInputOp = "Skaboop";
+	const std::string userInputNum1 = "5";
+	const std::string userInputNum2 = "0";
+
+	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
+
+	ASSERT_NEAR(std::get<0>(actual), 5.0, 1e-6);
+	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Skaboop);
+}

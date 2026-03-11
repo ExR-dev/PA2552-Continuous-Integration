@@ -39,6 +39,10 @@ namespace IO
         {
             ari = Calculator::MathOp::Exponentiate;
         }
+        else if (pOp == "skaboop")
+        {
+            ari = Calculator::MathOp::Skaboop;
+        }
         return std::tuple<double, double, Calculator::MathOp>(numOne, numTwo, ari);
     }
 
@@ -65,6 +69,9 @@ namespace IO
 
         case Calculator::MathOp::SquareRoot:
 			return Calculator::Sqrt(std::get<0>(op));
+
+        case Calculator::MathOp::Skaboop:
+            return Calculator::Skaboop(std::get<0>(op));
 
         default:
 			return std::numeric_limits<double>::quiet_NaN();

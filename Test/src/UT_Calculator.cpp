@@ -44,7 +44,8 @@ TEST(CalculatorTest, Sqrt)
 	ASSERT_DOUBLE_EQ(Calculator::Sqrt(9), 3);
 }
 
-TEST(UserInputTest, arithmetic)
+TEST(CalculatorTest, Skaboop)
 {
-
+	ASSERT_DOUBLE_EQ(Calculator::Skaboop(4), 0.0);
+	ASSERT_DOUBLE_EQ(Calculator::Skaboop(69), 1.0);
 }

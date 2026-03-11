@@ -9,7 +9,8 @@ namespace Calculator
 		Multiply,
 		Divide,
 		Exponentiate,
-		SquareRoot
+		SquareRoot,
+		Skaboop
 	};
 
 	[[nodiscard]] double Add(double a, double b) noexcept;
@@ -18,4 +19,5 @@ namespace Calculator
 	[[nodiscard]] double Div(double a, double b) noexcept;
 	[[nodiscard]] double Pow(double base, double exp) noexcept;
 	[[nodiscard]] double Sqrt(double a) noexcept;
+	[[nodiscard]] double Skaboop(double a) noexcept;
 }
