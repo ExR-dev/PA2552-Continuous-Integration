@@ -33,7 +33,7 @@ TEST(CalculatorTest, Pow)
 {
 	ASSERT_DOUBLE_EQ(Calculator::Pow(2, 3), 8);
 	ASSERT_DOUBLE_EQ(Calculator::Pow(5, 0), 1);
-	ASSERT_DOUBLE_EQ(Calculator::Pow(3, 2), 9);
+	ASSERT_DOUBLE_EQ(Calculator::Pow(3, 2), 9); // EEE
 	ASSERT_DOUBLE_EQ(Calculator::Pow(2, -1), 0.5);
 }
 
