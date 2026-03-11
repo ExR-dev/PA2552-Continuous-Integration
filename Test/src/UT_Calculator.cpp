@@ -48,3 +48,8 @@ TEST(CalculatorTest, WillFail)
 {
 	ASSERT_DOUBLE_EQ(1, 2);
 }
+
+TEST(UserInputTest, arithmetic)
+{
+
+}
