@@ -1,4 +1,6 @@
 #include "UserInteractor.hpp"
+#include <algorithm>
+#include <limits>
 
 namespace IO
 {
