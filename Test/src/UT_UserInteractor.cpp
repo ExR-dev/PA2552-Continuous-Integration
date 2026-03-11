@@ -122,11 +122,26 @@ TEST(UserInteractorTest, ParseDivVariant2)
 	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Divide);
 }
 
-TEST(UserInteractorTest, ParsePow)
+TEST(UserInteractorTest, ParsePowVariant1)
+{
+	IO::UserInteractor ui = IO::UserInteractor();
+
+	const std::string userInputOp = "pow";
+	const std::string userInputNum1 = "5";
+	const std::string userInputNum2 = "3";
+
+	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
+
+	ASSERT_NEAR(std::get<0>(actual), 5.0, 1e-6);
+	ASSERT_NEAR(std::get<1>(actual), 3.0, 1e-6);
+	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Exponentiate);
+}
+
+TEST(UserInteractorTest, ParsePowVariant2)
 {
 	IO::UserInteractor ui = IO::UserInteractor();
 	
-	const std::string userInputOp = "pow";
+	const std::string userInputOp = "exp";
 	const std::string userInputNum1 = "5";
 	const std::string userInputNum2 = "3";
 	
