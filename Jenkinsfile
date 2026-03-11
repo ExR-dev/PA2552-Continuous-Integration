@@ -28,6 +28,7 @@ pipeline {
 
         stage('Generate Makefiles (Premake)') {
             steps {
+                sh "${PREMAKE} -A"
                 sh "${PREMAKE} gmake"
             }
         }
