@@ -20,6 +20,10 @@ project "Application"
         "../Build/target/Library"
     }
 
+    dependson {
+        "Library"
+    }
+
     links {
         AddQuotation("Library")
     }
