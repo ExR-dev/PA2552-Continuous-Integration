@@ -42,6 +42,30 @@ namespace IO
 
     double UserInteractor::MakeCalculation(std::tuple<double, double, Calculator::MathOp> &op)
     {
-        return double();
+		Calculator::MathOp ari = std::get<2>(op);
+
+        switch (ari)
+        {
+        case Calculator::MathOp::Add:
+			return Calculator::Add(std::get<0>(op), std::get<1>(op));
+
+        case Calculator::MathOp::Subtract:
+			return Calculator::Sub(std::get<0>(op), std::get<1>(op));
+
+        case Calculator::MathOp::Multiply:
+			return Calculator::Mul(std::get<0>(op), std::get<1>(op));
+
+        case Calculator::MathOp::Divide:
+			return Calculator::Div(std::get<0>(op), std::get<1>(op));
+
+        case Calculator::MathOp::Exponentiate:
+			return Calculator::Pow(std::get<0>(op), std::get<1>(op));
+
+        case Calculator::MathOp::SquareRoot:
+			return Calculator::Sqrt(std::get<0>(op));
+
+        default:
+			return std::numeric_limits<double>::quiet_NaN();
+        }
     }
 } // IO
