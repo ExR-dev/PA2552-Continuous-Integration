@@ -40,7 +40,7 @@ namespace IO
         return std::tuple<double, double, Calculator::MathOp>(numOne, numTwo, ari);
     }
 
-    double UserInteractor::MakeCalculation(std::tuple<double, double, Calculator::MathOp> &op)
+    double UserInteractor::MakeCalculation([[maybe_unused]] std::tuple<double, double, Calculator::MathOp> &op)
     {
 		Calculator::MathOp ari = std::get<2>(op);
 
