@@ -13,6 +13,7 @@ project "Test"
 
     includedirs {
         "../Library/include",
+        "../Application/include",
         targetBuildPath .. "/External/include"
     }
 
