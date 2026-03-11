@@ -4,10 +4,10 @@ require "Premake/helper"
 workspace "Workspace"
 
     location("Generated")
-    cppdialect "C++23"
+    cppdialect "C++2a"
     warnings "Extra"
-    fatalwarnings "All"
-    externalwarnings "Off"
+    fatalwarnings "all"
+    --externalwarnings "Off"
 
     configurations {
         "debug",
