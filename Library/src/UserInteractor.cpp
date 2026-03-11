@@ -8,19 +8,24 @@ namespace IO
         double numTwo = std::stod(std::string(pNumTwo));
 
         Calculator::MathOp ari;
-        if(pOp == "add")
+        
+        std::string pop(pOp);
+        std::transform(pop.begin(), pop.end(), pop.begin(),
+               [](unsigned char c){ return std::tolower(c); });
+
+        if(pop == "add")
         {
             ari = Calculator::MathOp::Add;
         }
-        else if(pOp == "sub")
+        else if(pop == "sub" || pop == "subtract")
         {
             ari = Calculator::MathOp::Subtract;
         }
-        else if(pOp == "mul")
+        else if(pop == "mul" || pop == "multiply")
         {
             ari = Calculator::MathOp::Multiply;
         }
-        else if(pOp == "div")
+        else if(pop == "div" || pop == "divide")
         {
             ari = Calculator::MathOp::Divide;
         }
@@ -28,7 +33,7 @@ namespace IO
         {
             ari = Calculator::MathOp::SquareRoot;
         }
-        else if(pOp == "exp")
+        else if(pOp == "pow")
         {
             ari = Calculator::MathOp::Exponentiate;
         }
