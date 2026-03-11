@@ -45,6 +45,12 @@ pipeline {
                 archiveArtifacts artifacts: 'Generated/**', fingerprint: true
             }
         }
+
+        stage('Run Tests'){
+            steps {
+                sh './Build/target/Test/Test'
+            }
+        }
     }
 
     post {
