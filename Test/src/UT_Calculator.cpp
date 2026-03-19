@@ -52,9 +52,8 @@ TEST(CalculatorTest, Skaboop)
 
 TEST(CalculatorTest, Dist)
 {
-	ASSERT_NEAR(Calculator::Dist(0.0, 0.0), 0.0, 1e-6);
-	ASSERT_NEAR(Calculator::Dist(0.0, 1.0), 1.0, 1e-6);
-	ASSERT_NEAR(Calculator::Dist(2.0, 0.0), 2.0, 1e-6);
-	ASSERT_NEAR(Calculator::Dist(3.5, 1.0), 2.5, 1e-6);
-	ASSERT_NEAR(Calculator::Dist(-0.5, 10.0), 10.5, 1e-6);
+	ASSERT_DOUBLE_EQ(Calculator::Dist(0, 1), 1.0);
+	ASSERT_DOUBLE_EQ(Calculator::Dist(2, 0), 2.0);
+	ASSERT_DOUBLE_EQ(Calculator::Dist(3, 1), 2.0);
+	ASSERT_DOUBLE_EQ(Calculator::Dist(5.5, 6.1), 0.6);
 }

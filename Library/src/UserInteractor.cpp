@@ -43,10 +43,6 @@ namespace IO
         {
             ari = Calculator::MathOp::Skaboop;
         }
-        else if (pop == "dist" || pop == "distance")
-        {
-            ari = Calculator::MathOp::Dist;
-        }
         return std::tuple<double, double, Calculator::MathOp>(numOne, numTwo, ari);
     }
 
@@ -76,9 +72,6 @@ namespace IO
 
         case Calculator::MathOp::Skaboop:
             return Calculator::Skaboop(std::get<0>(op));
-
-        case Calculator::MathOp::Dist:
-            return Calculator::Dist(std::get<0>(op), std::get<1>(op));
 
         default:
 			return std::numeric_limits<double>::quiet_NaN();
