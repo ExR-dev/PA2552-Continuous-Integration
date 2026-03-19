@@ -39,5 +39,5 @@ double Calculator::Skaboop(double a) noexcept
 
 double Calculator::Dist(double a, double b) noexcept
 {
-	return 0.0;
+	return std::abs(b - a);
 }
