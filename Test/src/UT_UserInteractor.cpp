@@ -192,6 +192,6 @@ TEST(UserInteractorTest, ParseDist)
 	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
 
 	ASSERT_NEAR(std::get<0>(actual), 10.0, 1e-6);
-	ASSERT_NEAR(std::get<0>(actual), 7.0, 1e-6);
+	ASSERT_NEAR(std::get<1>(actual), 7.0, 1e-6);
 	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Dist);
 }
