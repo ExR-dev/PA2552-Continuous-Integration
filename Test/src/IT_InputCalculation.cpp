@@ -73,3 +73,11 @@ TEST(InputCalculationTest, CalcParsedSkaboop2)
 	double result = ui.MakeCalculation(parsedOp);
 	ASSERT_NEAR(result, 1.0, 1e-6);
 }
+
+TEST(InputCalculationTest, CalcParsedDist)
+{
+	IO::UserInteractor ui = IO::UserInteractor();
+	auto parsedOp = ui.StringToMathOperation("6.7", "1.3", "Distance");
+	double result = ui.MakeCalculation(parsedOp);
+	ASSERT_NEAR(result, 5.4, 1e-6);
+}

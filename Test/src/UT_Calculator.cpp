@@ -49,3 +49,12 @@ TEST(CalculatorTest, Skaboop)
 	ASSERT_DOUBLE_EQ(Calculator::Skaboop(4), 0.0);
 	ASSERT_DOUBLE_EQ(Calculator::Skaboop(69), 1.0);
 }
+
+TEST(CalculatorTest, Dist)
+{
+	ASSERT_DOUBLE_EQ(Calculator::Dist(0.0, 0.0), 0.0);
+	ASSERT_DOUBLE_EQ(Calculator::Dist(0.0, 1.0), 1.0);
+	ASSERT_DOUBLE_EQ(Calculator::Dist(2.0, 0.0), 2.0);
+	ASSERT_DOUBLE_EQ(Calculator::Dist(3.5, 1.0), 2.5);
+	ASSERT_DOUBLE_EQ(Calculator::Dist(-0.5, 10.0), 10.5);
+}

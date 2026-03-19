@@ -180,3 +180,18 @@ TEST(UserInteractorTest, ParseSkaboop)
 	ASSERT_NEAR(std::get<0>(actual), 5.0, 1e-6);
 	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Skaboop);
 }
+
+TEST(UserInteractorTest, ParseDist)
+{
+	IO::UserInteractor ui = IO::UserInteractor();
+
+	const std::string userInputOp = "dist";
+	const std::string userInputNum1 = "-0.1";
+	const std::string userInputNum2 = "3.2";
+
+	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
+
+	ASSERT_NEAR(std::get<0>(actual), -0.1, 1e-6);
+	ASSERT_NEAR(std::get<1>(actual), 3.2, 1e-6);
+	ASSERT_EQ(std::get<2>(actual), Calculator::MathOp::Dist);
+}
