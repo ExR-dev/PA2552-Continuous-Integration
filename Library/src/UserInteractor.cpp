@@ -6,13 +6,8 @@ namespace IO
 {
     std::tuple<double, double, Calculator::MathOp> UserInteractor::StringToMathOperation(std::string_view pNumOne, std::string_view pNumTwo, std::string_view pOp)
     {
-		std::string numOneStr(pNumOne), numTwoStr(pNumTwo);
-
-		numOneStr.replace(numOneStr.find('.'), 1, ",");
-		numTwoStr.replace(numTwoStr.find('.'), 1, ",");
-
-        double numOne = std::stod(numOneStr);
-        double numTwo = std::stod(numTwoStr);
+        double numOne = std::stod(std::string(pNumOne));
+        double numTwo = std::stod(std::string(pNumTwo));
 
         Calculator::MathOp ari;
         

@@ -186,8 +186,8 @@ TEST(UserInteractorTest, ParseDist)
 	IO::UserInteractor ui = IO::UserInteractor();
 
 	const std::string userInputOp = "dist";
-	const std::string userInputNum1 = "-0.1";
-	const std::string userInputNum2 = "3.2";
+	const std::string userInputNum1 = "-0,1";
+	const std::string userInputNum2 = "3,2";
 
 	auto actual = ui.StringToMathOperation(userInputNum1, userInputNum2, userInputOp);
 
