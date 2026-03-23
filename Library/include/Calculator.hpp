@@ -22,4 +22,6 @@ namespace Calculator
 	[[nodiscard]] double Sqrt(double a) noexcept;
 	[[nodiscard]] double Skaboop(double a) noexcept;
 	[[nodiscard]] double Dist(double a, double b) noexcept;
+	[[nodiscard]] double Abs(double a) noexcept;
+	[[nodiscard]] double Truncate(double a) noexcept;
 }

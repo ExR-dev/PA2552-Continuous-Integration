@@ -41,3 +41,13 @@ double Calculator::Dist(double a, double b) noexcept
 {
 	return std::abs(b - a);
 }
+
+double Calculator::Abs(double a) noexcept
+{
+	return a < 0 ? -a : a;
+}
+
+double Calculator::Truncate(double a) noexcept
+{
+	return std::trunc(a);
+}

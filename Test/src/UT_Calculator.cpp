@@ -57,3 +57,16 @@ TEST(CalculatorTest, Dist)
 	ASSERT_DOUBLE_EQ(Calculator::Dist(3, 1), 2.0);
 	ASSERT_DOUBLE_EQ(Calculator::Dist(5.5, 6.1), 0.6);
 }
+TEST(CalculatorTest, Abs)
+{
+	ASSERT_DOUBLE_EQ(Calculator::Abs(1), 1);
+	ASSERT_DOUBLE_EQ(Calculator::Abs(-1), 1);
+	ASSERT_DOUBLE_EQ(Calculator::Abs(0), 0);
+}
+
+TEST(CalculatorTest, Truncate)
+{
+	ASSERT_DOUBLE_EQ(Calculator::Truncate(12.34), 12);
+	ASSERT_DOUBLE_EQ(Calculator::Truncate(1.100), 1);
+	ASSERT_DOUBLE_EQ(Calculator::Truncate(-2.11), -2);
+}
